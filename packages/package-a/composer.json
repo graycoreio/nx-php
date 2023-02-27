@@ -1,0 +1,16 @@
+{
+    "name": "nx-php/package-a",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "NxPhp\\PackageA\\": "."
+        }
+    },
+    "authors": [
+        {
+            "name": "Damien Retzinger",
+            "email": "damienwebdev@gmail.com"
+        }
+    ]
+}

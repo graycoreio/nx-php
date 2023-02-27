@@ -1,0 +1,19 @@
+{
+    "name": "nx-php/package-c",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "NxPhp\\PackageC\\": "."
+        }
+    },
+    "authors": [
+        {
+            "name": "Damien Retzinger",
+            "email": "damienwebdev@gmail.com"
+        }
+    ],
+    "require": {
+        "nx-php/package-b": "*"
+    }
+}
