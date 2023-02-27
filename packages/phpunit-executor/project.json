@@ -1,0 +1,43 @@
+{
+  "name": "@nx-php/phpunit",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/phpunit-executor/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/phpunit-executor",
+        "main": "packages/phpunit-executor/src/index.ts",
+        "tsConfig": "packages/phpunit-executor/tsconfig.lib.json",
+        "format": ["esm", "cjs"],
+        "assets": [
+          "packages/phpunit-executor/*.md",
+          "packages/phpunit-executor/executor.json",
+          { 
+            "input": "packages/phpunit-executor/src", 
+            "glob": "schema.json", 
+            "output": "/" 
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/phpunit-executor/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/phpunit-executor/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
