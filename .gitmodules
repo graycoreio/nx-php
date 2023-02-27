@@ -1,0 +1,3 @@
+[submodule "packages/composer-plugin/php-dependency-list"]
+	path = packages/composer-plugin/php-dependency-list
+	url = https://github.com/mage-os/php-dependency-list

@@ -1,0 +1,55 @@
+{
+    "name": "@nx-php/composer-plugin",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/composer-plugin/src",
+    "projectType": "library",
+    "targets": {
+        "build": {
+            "executor": "@nrwl/esbuild:esbuild",
+            "outputs": [
+                "{options.outputPath}"
+            ],
+            "options": {
+                "outputPath": "dist/composer-plugin",
+                "main": "packages/composer-plugin/src/index.ts",
+                "tsConfig": "packages/composer-plugin/tsconfig.lib.json",
+                "external": ["@nrwl/devkit"],
+                "format": [
+                    "esm",
+                    "cjs"
+                ],
+                "assets": [
+                    { 
+                        "input": "packages/composer-plugin/php-dependency-list", 
+                        "glob": "php-classes.phar", 
+                        "output": "/" 
+                    }
+                ]
+            },
+            "dependsOn": ["build:php-classes"]
+        },
+        "build:php-classes": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "make packages/composer-plugin/php-dependency-list"
+                ]
+            },
+            "outputs": [
+                "packages/composer-plugin/php-dependency-list/php-classes.phar"
+            ]
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "outputs": [
+                "{options.outputFile}"
+            ],
+            "options": {
+                "lintFilePatterns": [
+                    "packages/composer-plugin/**/*.ts"
+                ]
+            }
+        }
+    },
+    "tags": []
+}
