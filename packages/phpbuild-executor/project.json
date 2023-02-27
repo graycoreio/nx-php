@@ -1,0 +1,35 @@
+{
+  "name": "@nx-php/phpbuild",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/phpbuild-executor/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/phpbuild-executor",
+        "main": "packages/phpbuild-executor/src/index.ts",
+        "tsConfig": "packages/phpbuild-executor/tsconfig.lib.json",
+        "format": ["esm", "cjs"],
+        "assets": [
+          "packages/phpbuild-executor/*.md",
+          "packages/phpbuild-executor/executor.json",
+          { 
+            "input": "packages/phpbuild-executor/src", 
+            "glob": "schema.json", 
+            "output": "/" 
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/phpbuild-executor/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
