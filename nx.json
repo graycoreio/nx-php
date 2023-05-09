@@ -9,6 +9,7 @@
   },
   "extends": "nx/presets/npm.json",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "plugins": ["./dist/composer-plugin/index.js"],
   "targetDefaults": {
     "test": {
       "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
