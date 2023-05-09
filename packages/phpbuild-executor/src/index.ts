@@ -22,10 +22,11 @@ export default async function phpbuildExecutor(
     );
     
     const { stderr, stdout } = await promisify(exec)(
-      `rsync -r \
+      ` mkdir -p ${outputPath} && \
+        rsync -r \
         ${context.workspace?.projects[<string>context.projectName].root}/** \
         ${outputPath} \
-        --exclude Test
+        --exclude Test && composer dump-autoload
       `
     )
      
