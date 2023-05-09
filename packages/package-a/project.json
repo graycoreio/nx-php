@@ -1,21 +1,28 @@
 {
-    "name": "@nx-php/package-a",
+    "name": "nx-php/package-a",
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "packages/package-a/src",
     "projectType": "library",
+    "implicitDependencies": [
+        "@nx-php/phpunit",
+        "@nx-php/phpbuild"
+    ],
     "targets": {
         "test": {
-            "executor": "./dist/phpunit-executor:phpunit"
+            "executor": "./dist/phpunit-executor:phpunit",
+            "dependsOn": [
+                "build"
+            ]
         },
         "build": {
             "executor": "./dist/phpbuild-executor:phpbuild",
             "options": {
                 "outputName": "nx-php/PackageA"
-            }
+            },
+            "dependsOn": [
+                "^build"
+            ]
         }
     },
-    "tags": [],
-    "implicitDependencies": [
-        "@nx-php/phpunit"
-    ]
+    "tags": []
 }

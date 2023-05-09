@@ -3,6 +3,7 @@
 namespace NxPhp\PackageB;
 
 use NxPhp\PackageB\DemoClass;
+
 use PHPUnit\Framework\TestCase;
 
 class ClassTest extends TestCase
