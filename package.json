@@ -2,7 +2,9 @@
   "name": "nx-php",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "cd packages/composer-plugin && npm run build"
+  },
   "private": true,
   "devDependencies": {
     "@nrwl/devkit": "^15.7.2",
