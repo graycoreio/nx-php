@@ -1,0 +1,72 @@
+name: Nx PHP Build
+
+on:
+  push:
+    branches:
+      - main
+    tags: ["v*"]
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20.x]
+        php: [8.1,8.2]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      
+      - uses: nrwl/nx-set-shas@v3
+        name: Derive appropriate SHAs for base and head for `nx affected` commands
+        with: 
+          main-branch-name: 'main'
+  
+
+      - uses: actions/cache@v3
+        name: Cache `.nx_cache` 
+        id: build_cache
+        with:
+          path: .nx_cache
+          key: build-${{ matrix.node }}-${{ github.sha }}
+          restore-keys:
+            build-${{ matrix.node }}
+
+      - uses: graycoreio/github-actions/clear-old-nx-cache@main
+        with:
+          size-in-mb: 500
+
+      - uses: graycoreio/github-actions/setup-node@main
+        with:
+          node-version: ${{ matrix.node }}
+          use-stamp-cache: true
+
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Setup PHP with PECL extension
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+
+      - uses: actions/cache@v3
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ matrix.php }}-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer     
+
+      - run: composer install
+
+      - run: npm run build
+
+      - run: npx nx run-many -t build
+
+      - run: npx nx run-many -t test
