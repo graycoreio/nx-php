@@ -3,6 +3,9 @@
   "version": "0.0.0-PLACEHOLDER",
   "type": "commonjs",
   "scripts": {
-    "build": "node build.mjs && cp package.json ../../dist/composer-plugin/"
+    "build": "node build.mjs && cp package.json README.md ../../dist/composer-plugin/"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

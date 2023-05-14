@@ -2,5 +2,8 @@
   "name": "@nx-php/phpunit",
   "executors": "./executor.json",
   "version": "0.0.0-PLACEHOLDER",
-  "type": "commonjs"
+  "type": "commonjs",
+  "publishConfig": {
+    "access": "public"
+  }
 }
