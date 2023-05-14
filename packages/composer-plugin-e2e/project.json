@@ -1,0 +1,24 @@
+{
+  "name": "composer-plugin-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "packages/composer-plugin-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/nx-plugin:e2e",
+      "options": {
+        "target": "@nx-php/composer-plugin:build",
+        "jestConfig": "packages/composer-plugin-e2e/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/composer-plugin-e2e/**/*.ts"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["@nx-php/composer-plugin"]
+}
