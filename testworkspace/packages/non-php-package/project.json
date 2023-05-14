@@ -1,0 +1,8 @@
+{
+    "name": "nx-php/non-php-package",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/non-php-package/src",
+    "projectType": "library",
+    "targets": {},
+    "tags": []
+}

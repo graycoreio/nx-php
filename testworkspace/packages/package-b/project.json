@@ -3,10 +3,6 @@
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "packages/package-b/src",
     "projectType": "library",
-    "implicitDependencies": [
-        "@nx-php/phpunit",
-        "@nx-php/phpbuild"
-    ],
     "targets": {
         "test": {
             "executor": "./dist/phpunit-executor:phpunit",
