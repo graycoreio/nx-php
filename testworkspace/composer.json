@@ -1,0 +1,15 @@
+{
+    "name": "nx-e2e/proj",
+    "autoload": {
+        "psr-4": {
+            "NxE2e\\Proj\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Damien Retzinger",
+            "email": "damienwebdev@gmail.com"
+        }
+    ],
+    "require": {}
+}

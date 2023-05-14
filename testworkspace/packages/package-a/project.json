@@ -5,13 +5,16 @@
     "projectType": "library",
     "targets": {
         "test": {
-            "executor": "./dist/phpunit-executor:phpunit",
+            "executor": "@nx-php/phpunit:phpunit",
+            "options": {
+                "pharPath": "../../../vendor/bin/phpunit"
+            },
             "dependsOn": [
                 "build"
             ]
         },
         "build": {
-            "executor": "./dist/phpbuild-executor:phpbuild",
+            "executor": "@nx-php/phpbuild:phpbuild",
             "options": {
                 "outputName": "nx-php/PackageA"
             },
