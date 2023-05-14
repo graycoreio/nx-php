@@ -51,6 +51,10 @@ import {
         expect(graph.graph.dependencies['nx-php/package-a']).toEqual([]);
         expect(graph.graph.dependencies['nx-php/package-b']).not.toEqual([]);
         expect(graph.graph.dependencies['nx-php/package-c']).not.toEqual([]);
-      });
+    });
+
+    it('should test php packages in the correct order', async () => {
+      const result = await runNxCommandAsync('run-many -t test');
+    });
   });
   

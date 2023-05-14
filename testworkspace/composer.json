@@ -2,7 +2,10 @@
     "name": "nx-e2e/proj",
     "autoload": {
         "psr-4": {
-            "NxE2e\\Proj\\": "src/"
+            "NxE2e\\Proj\\": "src/",
+            "NxPhp\\PackageA\\": "vendor/nx-php/package-a",
+            "NxPhp\\PackageB\\": "vendor/nx-php/package-b",
+            "NxPhp\\PackageC\\": "vendor/nx-php/package-c"
         }
     },
     "authors": [
