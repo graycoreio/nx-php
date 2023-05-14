@@ -69,6 +69,8 @@ jobs:
       - run: npx nx run-many -t build
 
       - run: npx nx run-many -t test
+
+      - run: npx nx run-many -t e2e
   
   publish:
     name: Publish
