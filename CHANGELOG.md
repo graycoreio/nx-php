@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.2](https://github.com/graycoreio/nx-php/compare/v0.1.1...v0.1.2) (2023-05-14)
+
+
+### Features
+
+* **composer-plugin:** only check project folders ([b5d05d6](https://github.com/graycoreio/nx-php/commit/b5d05d627b4beab87886eae8b8fce632fbfbcabf))
+* **phpunit:** add support for variable phpunit path ([cbcbc48](https://github.com/graycoreio/nx-php/commit/cbcbc48d363ec0ff7c7b11a6d5ff54f1ccb9152c))
+
 ## [0.1.1](https://github.com/graycoreio/nx-php/compare/v0.1.0...v0.1.1) (2023-05-11)
 
 
