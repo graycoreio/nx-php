@@ -22,6 +22,7 @@
         "assets": [
           "packages/phpbuild-executor/*.md",
           "packages/phpbuild-executor/executor.json",
+          "packages/phpbuild-executor/README.md",
           { 
             "input": "packages/phpbuild-executor/src", 
             "glob": "schema.json", 
