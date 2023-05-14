@@ -18,9 +18,12 @@ export default async function phpunitExecutor(
     throw Error('projectName must be defined.')
   }
 
+  let command = opts.pharPath + ' ' + `--bootstrap=${opts.bootstrap}`;
+
+
   try {
     const { stderr, stdout } = await promisify(exec)(`
-      ${opts.pharPath} ${context.workspace?.projects[context.projectName].root}
+      ${command} ${context.workspace?.projects[context.projectName].root}
     `)
     console.log(stdout)
     console.error(stderr)
