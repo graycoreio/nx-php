@@ -12,9 +12,6 @@ class DemoClass
         $b = new PackageBDemoClass();
         $b->foo();
 
-        echo "\n Sleeping for 1...";
-        sleep(1);
-
         echo "\n C Foo...";
     }
 }

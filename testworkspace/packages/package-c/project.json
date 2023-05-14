@@ -15,9 +15,6 @@
         },
         "build": {
             "executor": "@nx-php/phpbuild:phpbuild",
-            "options": {
-                "outputName": "nx-php/PackageC"
-            },
             "dependsOn": [
                 "^build"
             ]
