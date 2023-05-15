@@ -64,8 +64,6 @@ jobs:
 
       - run: composer install
 
-      - run: npm run build
-
       - run: npx nx run-many -t build
 
       - run: npx nx run-many -t test
@@ -98,8 +96,6 @@ jobs:
         node-version: 20.x
         use-stamp-cache: true
         registry-url: 'https://registry.npmjs.org'
-
-    - run: npm run build
 
     - run: npx nx run-many -t build
         
