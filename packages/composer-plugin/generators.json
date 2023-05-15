@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "new": {
+      "factory": "./generators/new/generator",
+      "schema": "./generators/new/schema.json",
+      "description": "Generate a new Nx project that uses PHP and Composer"
+    }
+  }
+}

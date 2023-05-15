@@ -4,5 +4,6 @@
   "type": "commonjs",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "generators": "generators.json"
 }

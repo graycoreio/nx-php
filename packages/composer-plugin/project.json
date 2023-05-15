@@ -12,14 +12,43 @@
             }
         },
         "build": {
-            "executor": "nx:run-commands",
-            "options": {
-                "command": "node build.mjs && cp package.json ../../dist/composer-plugin/",
-                "cwd": "packages/composer-plugin"
-            },
+            "executor": "@nrwl/esbuild:esbuild",
             "outputs": [
-                "dist/composer-plugin"
-            ]
+                "{options.outputPath}"
+            ],
+            "options": {
+                "outputPath": "dist/composer-plugin",
+                "main": "packages/composer-plugin/src/index.ts",
+                "additionalEntryPoints": [
+                    "packages/composer-plugin/src/generators/new/generator.ts"
+                ],
+                "platform": "node",
+                "external": [
+                    "@nrwl/devkit"
+                ],
+                "bundle": true,
+                "tsConfig": "packages/composer-plugin/tsconfig.lib.json",
+                "format": [
+                    "cjs"
+                ],
+                "esbuildOptions": {
+                    "outExtension": { ".js": ".js" }
+                },
+                "assets": [
+                    "packages/composer-plugin/generators.json",
+                    "packages/composer-plugin/README.md",
+                    { 
+                        "input": "packages/composer-plugin/src", 
+                        "glob": "**/schema.json", 
+                        "output": "/" 
+                    },
+                    { 
+                        "input": "packages/composer-plugin/src", 
+                        "glob": "**/files/**", 
+                        "output": "/" 
+                    }
+                ]
+            }
         }
     },
     "tags": []
