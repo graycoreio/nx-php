@@ -1,6 +1,7 @@
 {
   "name": "@nx-php/composer-plugin",
   "version": "0.0.0-PLACEHOLDER",
+  "executors": "./executor.json",
   "type": "commonjs",
   "publishConfig": {
     "access": "public"

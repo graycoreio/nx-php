@@ -1,9 +1,0 @@
-{
-  "executors": {
-    "phpbuild": {
-      "implementation": "./",
-      "schema": "./schema.json",
-      "description": "Runs `phpunit` to test PHP Packages."
-    }
-  }
-}

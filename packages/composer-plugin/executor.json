@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "build": {
+      "implementation": "./executors/phpbuild",
+      "schema": "./executors/phpbuild/schema.json",
+      "description": "Copies packages to vendor."
+    }
+  }
+}

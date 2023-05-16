@@ -14,7 +14,7 @@
             ]
         },
         "build": {
-            "executor": "@nx-php/phpbuild:phpbuild",
+            "executor": "@nx-php/composer-plugin:build",
             "dependsOn": [
                 "^build"
             ]

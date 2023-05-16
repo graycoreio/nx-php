@@ -19,6 +19,9 @@
             "options": {
                 "outputPath": "dist/composer-plugin",
                 "main": "packages/composer-plugin/src/index.ts",
+                "additionalEntryPoints": [
+                    "packages/composer-plugin/src/executors/phpbuild/index.ts"
+                ],
                 "platform": "node",
                 "external": [
                     "@nrwl/devkit"
@@ -33,6 +36,7 @@
                 },
                 "assets": [
                     "packages/composer-plugin/README.md",
+                    "packages/composer-plugin/executor.json",
                     { 
                         "input": "packages/composer-plugin/src", 
                         "glob": "**/schema.json", 
