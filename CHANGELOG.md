@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://github.com/graycoreio/nx-php/compare/v0.1.2...v0.2.0) (2023-05-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* `@nx-php/phpbuild` no longer exists. The executor `@nx-php/phpbuild:phpbuild` moved to `@nx-php/composer-plugin:build`
+
+### Features
+
+* move `@nx-php/phpbuild` to `@nx-php/composer-plugin` ([9cd8bf0](https://github.com/graycoreio/nx-php/commit/9cd8bf0caba49480efbcabd22c6c4dfc13e3395a))
+* **phpunit:** add bootstrap flag to phpunit ([ddc8fa9](https://github.com/graycoreio/nx-php/commit/ddc8fa99638119e350a77f4b310cb2301660e26a))
+
 ## [0.1.2](https://github.com/graycoreio/nx-php/compare/v0.1.1...v0.1.2) (2023-05-14)
 
 
