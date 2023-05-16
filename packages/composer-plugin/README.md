@@ -46,4 +46,4 @@ npm install --save-dev @nx-php/composer-plugin
 
 3. Start developing your PHP package!
 
-> You will likely need two of our other packages in order to build and test your package: [`@nx-php/phpbuild`](../phpbuild-executor/README.md) and [`@nx-php/phpunit`](../phpunit-executor/README.md). 
+> You will likely need the [`@nx-php/phpunit`](../phpunit-executor/README.md) package in order to test your plugin.

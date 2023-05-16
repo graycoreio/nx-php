@@ -22,8 +22,8 @@ npm install --save-dev @nx-php/composer-plugin
 
 Configure your Nx workspace to include PHP projects. Refer to the documentation of each project for detailed instructions on configuration and usage:
 
-* [@nx-php/phpunit documentation](./packages/composer-plugin/README.md)
-* [@nx-php/composer-plugin documentation](./packages/phpunit-executor/README.md)
+* [@nx-php/composer-plugin documentation](./packages/composer-plugin/README.md)
+* [@nx-php/phpunit documentation](./packages/phpunit-executor/README.md)
 
 
 ### License
