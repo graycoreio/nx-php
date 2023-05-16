@@ -1,6 +1,6 @@
 {
   "name": "nx-php",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "license": "MIT",
   "scripts": {
     "build": "cd packages/composer-plugin && npm run build"
