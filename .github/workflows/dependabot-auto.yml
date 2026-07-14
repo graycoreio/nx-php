@@ -12,9 +12,9 @@ jobs:
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
-          GH_TOKEN: ${{ secrets.GRAYCORE_GITHUB_REVIEWER_TOKEN }}
+          GH_TOKEN: ${{ secrets.GRAYCORE_GITHUB_TOKEN }}
       - name: Enable auto-merge for Dependabot PRs
         run: gh pr merge --auto --delete-branch --squash "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
-          GH_TOKEN: ${{ secrets.GRAYCORE_GITHUB_REVIEWER_TOKEN }}
+          GH_TOKEN: ${{ secrets.GRAYCORE_GITHUB_TOKEN }}
