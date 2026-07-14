@@ -12,4 +12,4 @@ jobs:
       - uses: googleapis/release-please-action@v5
         with:
           token: ${{ secrets.GRAYCORE_GITHUB_TOKEN }}
-          target-branch: develop
+          target-branch: main
