@@ -27,7 +27,7 @@ jobs:
         with: 
           main-branch-name: 'main'
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v6
         name: Cache `.nx_cache` 
         id: build_cache
         with:
@@ -55,7 +55,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v6
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ matrix.php }}-${{ hashFiles('**/composer.lock') }}
@@ -81,7 +81,7 @@ jobs:
       with:
         fetch-depth: 1
 
-    - uses: actions/cache@v3
+    - uses: actions/cache@v6
       name: Cache `.nx_cache` 
       id: build_cache
       with:
